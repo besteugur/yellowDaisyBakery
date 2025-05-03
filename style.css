@@ -1,0 +1,325 @@
+/* VARIABLES (Add to :root for easy theming) */
+:root {
+	--primary: #f5f0e6;
+	--secondary: #f8d56b;
+	--accent: #e0a800;
+	--white: #ffffff;
+	--muted: #444;
+	--dark: #333;
+}
+
+body {
+	font-family: Georgia, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: var(--primary);
+	color: var(--dark);
+	transition: all 0.3s ease;
+}
+
+header {
+	position: relative;
+	background-image: url('images/yellow daisiy.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	transition: all 0.3s ease;
+}
+
+header h1 {
+	position: relative;
+	color: white;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 10px 20px;
+	border-radius: 4px;
+	margin: 0;
+	font-size: 1.5rem;
+	text-align: center;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	transition: all 0.3s ease;
+}
+
+/* Navbar */
+nav {
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 10px 0;
+	transition: all 0.3s ease;
+}
+
+.nav-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.nav-links {
+	text-align: center;
+}
+
+.nav-links a {
+	color: var(--secondary);
+	text-decoration: none;
+	margin: 0 15px;
+	font-size: 1.1em;
+	transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+	color: white;
+	transform: scale(1.05);
+}
+
+/* Dark mode */
+.mode-toggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.4rem;
+	margin-left: 20px;
+	color: var(--secondary);
+	transition: transform 0.3s ease;
+}
+
+.mode-toggle:hover {
+	transform: scale(1.2);
+}
+
+body.dark-mode {
+	background-color: #1e1e1e;
+	color: #f0f0f0;
+}
+
+body.dark-mode nav {
+	background-color: #2a2a2a;
+}
+
+body.dark-mode nav a {
+	color: #f0f0f0;
+}
+
+body.dark-mode .card {
+	background: rgba(50, 50, 50, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card p {
+	color: #e0e0e0;
+}
+
+body.dark-mode footer {
+	background-color: #111;
+	color: var(--secondary);
+}
+
+body.dark-mode .service {
+	background-color: rgba(60, 60, 60, 0.8);
+}
+
+/* Main and content */
+main {
+	padding: 20px;
+	margin: 20px;
+	border-radius: 10px;
+	transition: all 0.3s ease;
+}
+
+.card {
+	display: inline-block;
+	background-color: rgba(255, 255, 255, 0.9);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin: 15px;
+	width: 250px;
+	vertical-align: top;
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+	border-radius: 10px;
+	width: 100%;
+	height: auto;
+}
+
+.card h2 {
+	font-size: 1.3em;
+	color: #2c3e50;
+}
+
+.card p {
+	font-size: 1em;
+	color: #444;
+}
+
+.menu-buttons button {
+	color: white;
+	background: rgba(0, 0, 0, 0.5);
+	border: none;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 5px;
+}
+
+.menu {
+	display: none;
+	margin-top: 30px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 600px;
+	text-align: center;
+}
+
+.menu h2 {
+	font-size: 2rem;
+	margin-bottom: 15px;
+}
+
+.menu ul li {
+	font-size: 1.2rem;
+	margin: 5px 0;
+}
+
+/* Form styling */
+form {
+	max-width: 600px;
+	margin: 20px auto;
+}
+
+form input,
+form textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	font-size: 1rem;
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	color: #333;
+	border-radius: 5px;
+	transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+	border-color: var(--accent);
+	outline: none;
+}
+
+form label {
+	display: block;
+	margin: 10px 0 5px;
+	font-weight: bold;
+}
+
+form button {
+	background-color: var(--secondary);
+	color: white;
+	border: none;
+	padding: 12px 25px;
+	font-size: 1rem;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+form button:hover {
+	background-color: var(--accent);
+}
+
+/* Footer */
+footer {
+	background-color: rgba(0, 0, 0, 0.7);
+	color: var(--secondary);
+	text-align: center;
+	padding: 10px 0;
+	margin-top: 20px;
+	transition: all 0.3s ease;
+}
+
+/* Services */
+.service {
+	display: flex;
+	align-items: center;
+	margin-bottom: 40px;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.service:hover {
+	transform: translateX(5px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service img {
+	width: 300px;
+	height: auto;
+	border-radius: 10px;
+	margin-right: 20px;
+}
+
+.service-text {
+	max-width: 500px;
+}
+
+.service-text h3 {
+	font-size: 1em;
+	color: #2c3e50;
+}
+
+.service-text p {
+	font-size: 1em;
+	color: #555;
+	line-height: 1.6;
+}
+
+.service.reverse {
+	flex-direction: row-reverse;
+}
+
+.service.reverse img {
+	margin-right: 0;
+	margin-left: 20px;
+}
+
+.service.reverse:hover {
+	transform: translateX(-5px);
+}
+
+#paris h2, #london h2, #istanbul h2 {
+	font-size: 2rem;
+	margin-bottom: 15px;
+}
+
+#paris ul, #london ul, #istanbul ul {
+	list-style-type: disc;
+	padding: 0;
+}
+
+#paris ul li, #london ul li, #istanbul ul li {
+	font-size: 1.2rem;
+	margin: 5px 0;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Yellow Daisy Bakery - Locations & Services</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+	<h1>Yellow Daisy Bakery</h1>
+</header>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html">Main Page</a>
+                <a href="services.html">Locations & Services</a>
+                <a href="catering.html">Catering Menu's & Our Products</a>
+                <a href="workshop.html">Workshop</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+</head>
+<body>
+
+    <div class="menu-buttons" style="text-align: left; margin-left: 20px;">
+        <button onclick="showMenu('menu1')">Classic Menu</button>
+        <button onclick="showMenu('menu2')">Vegan Menu</button>
+        <button onclick="showMenu('menu3')">Gluten-Free Menu</button>
+    </div>
+
+    <div id="menu1" class="menu" style="text-align: center;">
+        <h2>Classic Menu</h2>
+        <ul style="list-style-position: inside; padding-left: 0;">
+            <li>Assorted Croissants</li>
+            <li>Chocolate Chip Cookies</li>
+            <li>Fresh Fruit Tarts</li>
+            <li>Cheese Breads</li>
+            <li>Vanilla Cupcakes</li>
+        </ul>
+    </div>
+
+    <div id="menu2" class="menu" style="text-align: center;">
+        <h2>Vegan Menu</h2>
+        <ul style="list-style-position: inside; padding-left: 0;">
+            <li>Vegan Chocolate Cake</li>
+            <li>Vegan Scones</li>
+            <li>Almond Butter Cookies</li>
+            <li>Berry Muffins</li>
+            <li>Chia Pudding</li>
+        </ul>
+    </div>
+
+    <div id="menu3" class="menu" style="text-align: center;">
+        <h2>Gluten-Free Menu</h2>
+        <ul style="list-style-position: inside; padding-left: 0;">
+            <li>Gluten-Free Brownies</li>
+            <li>Almond Flour Cookies</li>
+            <li>Flourless Chocolate Cake</li>
+            <li>Gluten-Free Banana Bread</li>
+            <li>Rice Flour Lemon Cake</li>
+        </ul>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin: 20px;">
+        <div style="flex: 1;">
+            <!-- Left side content remains as is -->
+        </div>
+        
+        <div style="flex: 1;">
+            <div class="menu-buttons" style="text-align: right; margin-right: 20px;">
+                <button onclick="showMenu('paris')">Paris</button>
+                <button onclick="showMenu('london')">London</button>
+                <button onclick="showMenu('istanbul')">Istanbul</button>
+            </div>
+
+            <div id="paris" class="menu" style="text-align: center;">
+                <h2>Paris Menu</h2>
+                <ul style="list-style-position: inside; padding-left: 0;">
+                    <li>Butter Croissants</li>
+                    <li>Pain Au Chocolat</li>
+                    <li>Vanilla Eculair</li>
+                    <li>Apple Tarts</li>
+                    <li>Raspberry Macarons</li>
+                </ul>
+            </div>
+
+            <div id="london" class="menu" style="text-align: center;">
+                <h2>London Menu</h2>
+                <ul style="list-style-position: inside; padding-left: 0;">
+                    <li>Butter Croissants</li>
+                    <li>Chocolate Twists</li>
+                    <li>Vanilla Slice</li>
+                    <li>Apple Crumble Tart</li>
+                    <li>Jam Shortbread</li>
+                </ul>
+            </div>
+
+            <div id="istanbul" class="menu" style="text-align: center;">
+                <h2>Istanbul Menu</h2>
+                <ul style="list-style-position: inside; padding-left: 0;">
+                    <li>Simit & Pogaca</li>
+                    <li>Chocolate Acma</li>
+                    <li>Vanilla Cream Puff</li>
+                    <li>Apple Tart</li>
+                    <li>Raspberry Lokum</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLocationMenu(locationId) {
+            const locationMenus = document.querySelectorAll('.location-menu');
+            locationMenus.forEach(menu => {
+                menu.style.display = 'none';
+            });
+            document.getElementById(locationId).style.display = 'block';
+        }
+        
+        // Show Paris menu by default
+        showLocationMenu('paris');
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Yellow Daisy Bakery | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function showMenu(menuId) {
+            // Hide all menus
+            const menus = document.querySelectorAll('.menu');
+            menus.forEach(menu => {
+                menu.style.display = 'none';
+            });
+
+            // Show the selected menu
+            document.getElementById(menuId).style.display = 'block';
+        }
+
+        // Check URL parameters on page load
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const menuParam = urlParams.get('menu');
+            
+            if (menuParam) {
+                showMenu(menuParam);
+            } else {
+                // Default to show the classic menu if no parameter
+                showMenu('menu1');
+            }
+        }
+    </script>
+
+</body>
+</html>

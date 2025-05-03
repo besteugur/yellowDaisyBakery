@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Yellow Daisy Bakery - Locations & Services</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Yellow Daisy Bakery</h1>
+</header>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html">Main Page</a>
+                <a href="services.html">Locations & Services</a>
+				<a href="catering.html">Catering Menu's & Our Products</a>
+				<a href="workshop.html">Workshop</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+	<main>
+		<h2>Locations and Services</h2>
+		<p></p>
+
+		<div class="service" id="paris">
+			<img src="https://wetasteparis.com/wp-content/uploads/2023/03/7-FrenchBread-dreamstime_xxl_192383490.jpg" alt="Paris Bakery">
+			<div class="service-text">
+				<h3>Paris</h3>
+				<p>In the heart of the city of romance, our bakery is one of the most visited and most preferred. <a href="catering.html?menu=paris">Click for menu. </a></p>
+			</div>
+		</div>
+
+		<div class="service reverse" id="london">
+			<img src="https://www.countryandtownhouse.com/wp-content/uploads/2019/03/Peggy-Porschen-Chelsea.jpg" alt="London Bakery">
+			<div class="service-text">
+				<h3>London</h3>
+				<p>Indulge in freshly baked delights at our London bakery, where every treat is crafted with love and the finest ingredients!<a href="catering.html?menu=london"> Click for menu.</a></p>
+			</div>
+		</div>
+
+		<div class="service" id="istanbul">
+			<img src="https://cms.visit.istanbul//fileupload/UserFiles/Folders/eat/kukis.jpg" alt="Istanbul Bakery">
+			<div class="service-text">
+				<h3>Istanbul</h3>
+				<p>Discover the taste of tradition and artistry at our original location: Istanbul bakery, where every bite tells a story of love and flavor!<a href="catering.html?menu=istanbul"> Click for menu.</a></p>
+			</div>
+		</div>
+
+		<div class="service reverse" id="catering">
+			<img src="https://thumbs.dreamstime.com/b/lot-sweet-pastries-baskets-counter-food-store-bakery-buffet-table-business-breakfasts-catering-events-316240213.jpg" alt="Catering Service">
+			<div class="service-text">
+				<h3>Catering</h3>
+				<p>We are now offering catering service for your most special days! Our fresh delights will be the talk of the show.<a href="catering.html?menu=menu1"> Click for example menus.</a></p>
+			</div>
+		</div>
+
+		<div class="service" id="workshop">
+			<img src="https://lbcotulsa.com/wp-content/uploads/2021/07/LBCO21-Class-1-28-scaled.jpg" alt="Workshop">
+			<div class="service-text">
+				<h3>Workshop</h3>
+				<p>We offer classes free of charge to the people who wish to learn baking as good as we do!<a href="workshop.html"> Click for dates and sign up! </a></p>
+			</div>
+		</div>
+	</main>
+
+	<script>
+		window.onload = function() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const location = urlParams.get('location');
+			
+			if (location) {
+				const element = document.getElementById(location);
+				if (element) {
+					// Calculate the position to scroll to (centered)
+					const elementPosition = element.getBoundingClientRect().top;
+					const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight / 2) + (element.offsetHeight / 2);
+					
+					// Smooth scroll to the element
+					window.scrollTo({
+						top: offsetPosition,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+	</script>
+	<footer>
+        &copy; 2024 Yellow Daisy Bakery. All rights reserved.
+    </footer>
+</body>
+</html>
