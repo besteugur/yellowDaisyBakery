@@ -39,4 +39,4 @@ A modern, responsive website concept for a fictional bakery brand. Created as a 
 
 ## 📄 License
 
-All rights reserved © 2024 Beste Ugur
+All rights reserved © 2025 Beste Ugur
